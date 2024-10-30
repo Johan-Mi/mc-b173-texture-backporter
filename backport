@@ -1,0 +1,19 @@
+#!/bin/sh
+
+set -eu
+
+[ "$#" != 1 ] && (
+  echo "usage: $0 UNZIPPED_SOURCE_PACK"
+  exit 1
+)
+
+SRC="$1"
+
+B="$SRC/assets/minecraft/textures/block"
+I="$SRC/assets/minecraft/textures/item"
+E="$(dirname "$0")/placeholder.png"
+T="$(dirname "$0")/transparent.png"
+
+magick montage -tile 16x16 -geometry 16x16 -background transparent \
+  "$B/grass_block_top.png" "$B/stone.png" "$B/dirt.png" "$B/grass_block_side.png" "$B/oak_planks.png" "$B/smooth_stone_slab_side.png" "$B/smooth_stone.png" "$B/bricks.png" "$B/tnt_side.png" "$B/tnt_top.png" "$B/tnt_bottom.png" "$B/cobweb.png" "$B/poppy.png" "$B/dandelion.png" $E "$B/oak_sapling.png" "$B/cobblestone.png" "$B/bedrock.png" "$B/sand.png" "$B/gravel.png" "$B/oak_log.png" "$B/oak_log_top.png" "$B/iron_block.png" "$B/gold_block.png" "$B/diamond_block.png" $E $E $E "$B/red_mushroom.png" "$B/brown_mushroom.png" $E $E "$B/gold_ore.png" "$B/iron_ore.png" "$B/coal_ore.png" "$B/bookshelf.png" "$B/mossy_cobblestone.png" "$B/obsidian.png" "$B/grass_block_side_overlay.png" "$B/short_grass.png" "$B/grass_block_top.png" $E $E "$B/crafting_table_top.png" "$B/furnace_front.png" "$B/furnace_side.png" "$B/dispenser_front.png" $E "$B/sponge.png" "$B/glass.png" "$B/diamond_ore.png" "$B/redstone_ore.png" "$B/oak_leaves.png" "$B/oak_leaves.png" $E "$B/dead_bush.png" "$B/fern.png" $E $E "$B/crafting_table_side.png" "$B/crafting_table_front.png" "$B/furnace_front_on.png" "$B/furnace_top.png" "$B/spruce_sapling.png" "$B/white_wool.png" "$B/spawner.png" "$B/snow.png" "$B/ice.png" "$B/grass_block_snow.png" "$B/cactus_top.png" "$B/cactus_side.png" "$B/cactus_bottom.png" "$B/clay.png" "$B/sugar_cane.png" "$B/jukebox_side.png" "$B/jukebox_top.png" $E $E $E "$B/birch_sapling.png" "$B/torch.png" "$B/oak_door_top.png" "$B/iron_door_top.png" "$B/ladder.png" "$B/oak_trapdoor.png" $E "$B/farmland_moist.png" "$B/farmland.png" "$B/wheat_stage[0-7].png" "$B/lever.png" "$B/oak_door_bottom.png" "$B/iron_door_bottom.png" "$B/redstone_torch.png" $E $E "$B/pumpkin_top.png" "$B/netherrack.png" "$B/soul_sand.png" "$B/glowstone.png" "$B/piston_top_sticky.png" "$B/piston_top.png" "$B/piston_side.png" "$B/piston_bottom.png" "$B/piston_inner.png" $E "$B/rail_corner.png" "$B/black_wool.png" "$B/gray_wool.png" "$B/redstone_torch_off.png" "$B/spruce_log.png" "$B/birch_log.png" "$B/pumpkin_side.png" "$B/carved_pumpkin.png" "$B/jack_o_lantern.png" "$B/cake_top.png" "$B/cake_side.png" "$B/cake_inner.png" "$B/cake_bottom.png" $E $E $E "$B/rail.png" "$B/red_wool.png" "$B/pink_wool.png" "$B/repeater.png" "$B/spruce_leaves.png" "$B/spruce_leaves.png" $E $E $E $E $E $E "$I/cake.png" $E $E $E "$B/lapis_block.png" "$B/green_wool.png" "$B/lime_wool.png" "$B/repeater_on.png" $E $E $E $E $E $E $E $E $E $E $E $E "$B/lapis_ore.png" "$B/brown_wool.png" "$B/yellow_wool.png" "$B/powered_rail.png" $E $E $E $E $E $E $E $E $E $E $E $E "$B/sandstone_top.png" "$B/blue_wool.png" "$B/light_blue_wool.png" "$B/powered_rail_on.png" $T $T $E $E $E $E $E $E $E $E $E $E "$B/sandstone.png" "$B/purple_wool.png" "$B/magenta_wool.png" "$B/detector_rail.png" $E $E $E $E $E $E $E $E $E $E $E $E "$B/sandstone_bottom.png" "$B/cyan_wool.png" "$B/orange_wool.png" $E $E $E $E $E $E $E $E $E $E $E $E $E $E "$B/light_gray_wool.png" $E $E $E $E $E $E $E $E $E $E $E $E $E $E "$B/destroy_stage_[0-9].png" $E $E $E $E $E $E \
+  terrain.png
